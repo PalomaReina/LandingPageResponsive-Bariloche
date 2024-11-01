@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive landing page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <!--Inicio del header-->
+    <header>
+        <a href="#" class="brand">Viajá</a>
+        <div class="menu-btn"></div>
+            <div class="navigation">
+                <div class="navigation-items">
+                    <a href="#">Home</a>
+                    <a href="#">Nosotros</a>
+                    <a href="#">Explorar</a>
+                    <a href="#">Galeria</a>
+                    <a href="#">Contacto</a>
+                </div>
+                
+            </div>
+    </header>
+    <!--Fin del header-->
+
+    <!--Inicio de home-->
+    <section class="home">
+        <video class="video-slide active" src="bariloche-home.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="2.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="3.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="4.mp4" autoplay muted loop></video>
+        
+        <div class="content active">
+            <h1>Bariloche<br><span>Argentina</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac pharetra dolor. Nullam venenatis condimentum justo eget imperdiet. Sed id odio ac tortor maximus dignissim eget et neque. Nulla consectetur a elit sed pharetra. Praesent eget placerat mauris. Aenean facilisis nisi id ultricies consequat.Morbi non tortor sed ligula molestie maximus in non sem. Etiam non dapibus sem, sit amet commodo quam. Sed vitae nulla ante. Aenean non neque consectetur, ullamcorper velit ac, dictum libero. Vivamus eget sodales nisi, sit amet tempus tortor. Praesent mollis nulla fringilla, luctus eros eget, ornare erat. Donec at augue lectus. Sed ornare laoreet dui, sed convallis ligula.</p>
+            <a href="#">Conocé más</a>
+        </div>
+        <div class="content">
+            <h1>Trekking<br><span>Aventura</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac pharetra dolor. Nullam venenatis condimentum justo eget imperdiet. Sed id odio ac tortor maximus dignissim eget et neque. Nulla consectetur a elit sed pharetra. Praesent eget placerat mauris. Aenean facilisis nisi id ultricies consequat.Morbi non tortor sed ligula molestie maximus in non sem. Etiam non dapibus sem, sit amet commodo quam. Sed vitae nulla ante. Aenean non neque consectetur, ullamcorper velit ac, dictum libero. Vivamus eget sodales nisi, sit amet tempus tortor. Praesent mollis nulla fringilla, luctus eros eget, ornare erat. Donec at augue lectus. Sed ornare laoreet dui, sed convallis ligula.</p>
+            <a href="#">Conocé más</a>
+        </div>
+        <div class="content">
+            <h1>Pesca<br><span>Naturaleza</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac pharetra dolor. Nullam venenatis condimentum justo eget imperdiet. Sed id odio ac tortor maximus dignissim eget et neque. Nulla consectetur a elit sed pharetra. Praesent eget placerat mauris. Aenean facilisis nisi id ultricies consequat.Morbi non tortor sed ligula molestie maximus in non sem. Etiam non dapibus sem, sit amet commodo quam. Sed vitae nulla ante. Aenean non neque consectetur, ullamcorper velit ac, dictum libero. Vivamus eget sodales nisi, sit amet tempus tortor. Praesent mollis nulla fringilla, luctus eros eget, ornare erat. Donec at augue lectus. Sed ornare laoreet dui, sed convallis ligula.</p>
+            <a href="#">Conocé más</a>
+        </div>
+        <div class="content">
+            <h1>Ski<br><span>Juntos</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac pharetra dolor. Nullam venenatis condimentum justo eget imperdiet. Sed id odio ac tortor maximus dignissim eget et neque. Nulla consectetur a elit sed pharetra. Praesent eget placerat mauris. Aenean facilisis nisi id ultricies consequat.Morbi non tortor sed ligula molestie maximus in non sem. Etiam non dapibus sem, sit amet commodo quam. Sed vitae nulla ante. Aenean non neque consectetur, ullamcorper velit ac, dictum libero. Vivamus eget sodales nisi, sit amet tempus tortor. Praesent mollis nulla fringilla, luctus eros eget, ornare erat. Donec at augue lectus. Sed ornare laoreet dui, sed convallis ligula.</p>
+            <a href="#">Conocé más</a>
+        </div>
+        <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            
+        </div>
+    </section>
+    
+    <!--Javascript del menu responisvo-->
+    <script type="text/javascript">
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+        menuBtn.addEventListener("click",() => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+
+        });
+
+    //Script para los slides
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function(manual){
+            btns.forEach((btn)=>{
+                btn.classList.remove("active");
+            });
+            slides.forEach((slide)=>{
+                slide.classList.remove("active");
+            });
+            contents.forEach((content)=>{
+                content.classList.remove("active");
+            });
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn,i)=>{
+            btn.addEventListener("click",() => {
+                sliderNav(i);
+            });
+        }); 
+    </script>
+</body>
+</html>
